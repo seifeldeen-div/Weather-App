@@ -1,0 +1,237 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+:root {
+    /*Prime colors*/
+    --Background-color: #1a1d3a;
+    --Background-Gradient: linear-gradient(-45deg, #1a1d3a, #3d2d86, #3a407b);
+    --Primary-Blue-color: #5b9ef5;
+    --Foreground-Text-color: #ffffff;
+    --Primary-fontFamily: Roboto;
+    /*Secondary Colors*/
+    --Card-Background-color: rgba(45, 52, 95, 0.5);
+    --Secondary-Purple: #2d345f;
+    --Muted-Text-color: #8b93c0;
+    --Muted-Foreground: #a8b0d9;
+}
+
+body {
+    font-family: var(--Primary-fontFamily);
+    background-color: var(--Background-color);
+    color: white;
+}
+
+@media screen and (max-width: 426px) {
+    body {
+        width: 100vw;
+    }
+
+    .container {
+        width: 90%;
+        margin: auto;
+    }
+
+    .container .heading {
+        margin: 20px 0;
+
+        h2 {
+            font-size: 30px;
+            -webkit-text-stroke: 0.2px rgb(255, 255, 255);
+            /* color: transparent; */
+            color: white;
+            letter-spacing: 1px;
+        }
+
+        p {
+            color: white;
+            font-size: 12px;
+            font-weight: 600;
+        }
+    }
+
+    .container .witherCard {
+        margin: 0 0 20px;
+        background: var(--Background-color);
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        animation: fadeUp 0.8s ease forwards;
+
+        .icon {
+            i {
+                font-size: 100px;
+                font-weight: 100;
+                color: #BEDBFF;
+            }
+        }
+
+        .temp {
+            p {
+                font-size: 20px;
+                font-weight: 600;
+                border: solid;
+                width: fit-content;
+                padding: 15px 10px;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 15px 0;
+                color: rgba(255, 255, 255, 0.784);
+            }
+        }
+
+        .content,
+        .highLowTemp {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            p:first-child,
+            p+p {
+                margin: 2px 15px;
+                color: rgba(255, 255, 255, 0.488);
+                font-size: 15px;
+            }
+        }
+
+        .highLowTemp {
+            p {
+                color: rgb(65, 122, 179) !important;
+                font-weight: 600;
+            }
+        }
+    }
+
+    .container .detailsCard {
+        margin-bottom: 20px;
+        animation: fadeUp 0.8s 0.5s ease forwards;
+        opacity: 0;
+
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: start;
+
+            .part {
+                padding: 10px 15px;
+                flex: 1 1 110px;
+                /* border: solid; */
+                border-radius: 10px;
+                margin: 10px 10px 0 0;
+                background: #202552;
+                box-shadow: 0 4px 7px 0px rgba(0, 0, 0, 0.2);
+
+                div {
+                    margin: 5px 0;
+
+                    span {
+                        color: #3a8fff;
+
+                        i {
+                            font-size: 12px;
+                        }
+                    }
+
+                    span+span {
+                        color: rgba(255, 255, 255, 0.823);
+                        font-size: 13px;
+                        font-weight: 400;
+                    }
+
+                    p {
+                        margin: 10px 0 0;
+                        font-size: 20px;
+                        padding: 5px 0;
+
+                        span {
+                            color: white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .nav {
+        margin-bottom: 10px;
+        width: 90%;
+        margin: auto;
+        border-radius: 10px;
+        padding: 10px;
+        /* border: solid; */
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        a {
+            width: 60px;
+            aspect-ratio: 1;
+            display: inline-block;
+            /* padding: 15px 25px; */
+            border: solid;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: fadeSpin 1.5s 1.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+            opacity: 0;
+
+            &,
+            i {
+                color: #BEDBFF;
+            }
+
+        }
+    }
+}
+
+/* -------Global Style------- */
+.cardStyle {
+    background: var(--Background-color);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4),
+        0 12px 40px rgba(30, 20, 100, 0.55),
+        0 24px 64px rgba(15, 10, 60, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.10);
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+/* -----Animations--------- */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeSpin {
+    0% {
+        opacity: 0;
+        transform: translateX(120px) rotate(0deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0) rotate(-720deg);
+    }
+}
