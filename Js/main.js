@@ -194,7 +194,7 @@ if (savedCity) {
     localStorage.removeItem("selectedCity")
 }
 else {
-    city = "cairo"
+    city = "Shebin Al-Kom"
     getWeather(city)
 }
 
