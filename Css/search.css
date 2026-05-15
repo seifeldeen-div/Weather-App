@@ -195,12 +195,16 @@ a {
         }
     }
 }
+
 /* -------------------------------HomePage---------------- */
 .homepage {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 30px 0;
+    animation: faderRight 0.8s 1.5s ease forwards;
+    opacity: 0;
+
     a {
         display: inline-block;
         color: white;
@@ -208,6 +212,7 @@ a {
         padding: 15px 25px;
         border-radius: 30px;
         background: var(--Background-Gradient);
+        box-shadow: 0 5px 11px 3px rgba(0 0 0 / 0.1);
     }
 }
 
@@ -281,6 +286,32 @@ a {
 
 .activeErrorCity {
     bottom: 830px;
+}
+
+/* --------------------WebPhone-------------------------- */
+.WebPhone {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    color: red;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    p {
+        margin: 100px 0;
+    }
+}
+
+.hidden {
+    display: none;
 }
 
 /* --------------------------Animation------------------------- */
