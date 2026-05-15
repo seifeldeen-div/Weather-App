@@ -25,6 +25,7 @@ a {
 @media screen and (max-width:426px) {
     body {
         width: 100vw;
+        height: 0;
         font-family: Roboto;
         background-color: var(--Background-color);
         color: white;
@@ -194,6 +195,21 @@ a {
         }
     }
 }
+/* -------------------------------HomePage---------------- */
+.homepage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0;
+    a {
+        display: inline-block;
+        color: white;
+        /* border: solid; */
+        padding: 15px 25px;
+        border-radius: 30px;
+        background: var(--Background-Gradient);
+    }
+}
 
 /* ---------------------------------sraechSign----------------- */
 .searchSign {
@@ -215,30 +231,13 @@ a {
 }
 
 /* ----------------------------------ErrorCity------------------ */
-/* .errorCity {
-    width: 200px;
-    height: 50px;
-    background-color: #7a55ff;
-    color: white;
-    position: absolute;
-    top: -100px;
-    left: calc(60% - 150px);
-    border-radius: 2px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 15px;
-    letter-spacing: 1px;
-    font-weight: 600;
-} */
-
 .errorCity {
     width: 200px;
     height: 50px;
     background-color: #2a316c;
     color: white;
     position: absolute;
-    bottom: 800px;
+    bottom: 900px;
     left: calc(60% - 150px);
     border-radius: 10px;
     display: flex;
@@ -253,7 +252,6 @@ a {
     overflow: hidden;
 }
 
-/* البوردر المتحرك */
 .errorCity::before {
     content: "";
     position: absolute;
@@ -267,7 +265,6 @@ a {
     animation: rotateBorder 3s linear infinite;
 }
 
-/* الطبقة الداخلية */
 .errorCity::after {
     content: "";
     position: absolute;
@@ -277,20 +274,13 @@ a {
     z-index: 1;
 }
 
-/* النص يفضل فوق */
 .errorCity span {
     position: relative;
     z-index: 2;
 }
 
-@keyframes rotateBorder {
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
 .activeErrorCity {
-    bottom: 720px;
+    bottom: 830px;
 }
 
 /* --------------------------Animation------------------------- */
@@ -303,5 +293,11 @@ a {
     to {
         opacity: 1;
         transform: translateX(0);
+    }
+}
+
+@keyframes rotateBorder {
+    100% {
+        transform: rotate(360deg);
     }
 }
