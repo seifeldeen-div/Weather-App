@@ -22,23 +22,25 @@
 <body>
     <div class="container">
         <div class="heading">
-            <h2>Miami</h2>
-            <p>US</p>
+            <h2 id="cityName">City</h2>
+            <p id="weatherCountry" class="gradient-text">WeatherPRO</p>
         </div>
         <div class="witherCard cardStyle">
             <div class="icon">
-                <i class="fa-regular fa-cloud"></i>
+                <!-- <i class="fa-regular fa-cloud"></i> -->
+                <!-- <img id="weatherIcon" src="../assets/images/clouds.png" alt=""> -->
+                <iconify-icon id="weatherIcon" icon=""></iconify-icon>
             </div>
             <div class="temp">
-                <p><span>19</span><sup>o</sup></p>
+                <p><span id="cityTemp">0.0<sup>o</sup></span></p>
             </div>
             <div class="content">
                 <p>Partly Cloudy</p>
-                <p>Feels like <span>17</span>°C</p>
+                <p>Feels like <span id="cityTemp">0.0</span> C</p>
             </div>
             <div class="highLowTemp">
-                <p>High: <span>19</span><sup>o</sup></p>
-                <p>Low: <span>15</span><sup>o</sup></p>
+                <p>High: <span id="highTemp">0.0</span><sup>o</sup></p>
+                <p>Low: <span id="lowTemp">0.0</span><sup>o</sup></p>
             </div>
         </div>
         <div class="detailsCard cardStyle">
@@ -52,7 +54,7 @@
                         <span>Humidity</span>
                     </div>
                     <div>
-                        <p><span>20</span>%</p>
+                        <p><span id="humidity">0</span>%</p>
                     </div>
                 </div>
                 <div class="part">
@@ -61,7 +63,7 @@
                         <span>Wind</span>
                     </div>
                     <div>
-                        <p><span>12</span> mph</p>
+                        <p><span id="wind">0</span> mph</p>
                     </div>
                 </div>
                 <div class="part">
@@ -70,7 +72,7 @@
                         <span>Visibility</span>
                     </div>
                     <div>
-                        <p><span>10</span> mi</p>
+                        <p><span id="visibility">0</span> mi</p>
                     </div>
                 </div>
                 <div class="part">
@@ -79,18 +81,23 @@
                         <span>Pressure</span>
                     </div>
                     <div>
-                        <p><span>1013</span> mb</p>
+                        <p><span id="pressure">0000</span> mb</p>
                     </div>
                 </div>
+            </div>
+            <div class="date">
+                <p id="dateTiem">0000/00/00 00:00</p>
             </div>
         </div>
     </div>
     <div class="nav">
-        <a href="#"><i class="fa-solid fa-plus fa-beat"></i></a>
+        <a href="../pages/search.html"><i class="fa-solid fa-plus fa-beat"></i></a>
     </div>
 
     <!-- main JS template -->
-    <script src="Js/main.js"></script>
+    <script src="../Js/main.js"></script>
+    <!-- iconifyDesign -->
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
 </body>
 
 </html>

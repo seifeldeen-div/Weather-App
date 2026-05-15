@@ -22,6 +22,33 @@ a {
     --Muted-Foreground: #a8b0d9;
 }
 
+/* --------------------WebPhone-------------------------- */
+.WebPhone {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    color: red;
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    p {
+        margin: 100px 0;
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+
 @media screen and (max-width:426px) {
     body {
         width: 100vw;

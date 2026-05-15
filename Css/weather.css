@@ -67,10 +67,18 @@ body {
         animation: fadeUp 0.8s ease forwards;
 
         .icon {
-            i {
-                font-size: 100px;
+
+            i,
+            img,
+            iconify-icon {
+                font-size: 150px;
                 font-weight: 100;
                 color: #BEDBFF;
+                margin-bottom: 20px;
+            }
+
+            img {
+                width: 150px;
             }
         }
 
@@ -80,12 +88,13 @@ body {
                 font-weight: 600;
                 border: solid;
                 width: fit-content;
-                padding: 15px 10px;
+                width: 80px;
+                aspect-ratio: 1;
                 border-radius: 50%;
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                margin: 15px 0;
+                margin: 0 0 15px;
                 color: rgba(255, 255, 255, 0.784);
             }
         }
@@ -161,6 +170,14 @@ body {
                 }
             }
         }
+        .date {
+            text-align: center;
+            margin: 20px 0 0;
+            p {
+                color:#9b82ff;
+                letter-spacing: 2px;
+            }
+        }
     }
 
     .nav {
@@ -180,17 +197,20 @@ body {
             aspect-ratio: 1;
             display: inline-block;
             /* padding: 15px 25px; */
-            border: solid;
+            /* border: solid; */
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
             animation: fadeSpin 1.5s 1.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
             opacity: 0;
+            background: linear-gradient(135deg, #3a72ff 0%, #7a55ff 50%, #6B4FD8 100%);
+            box-shadow: 0 0 40px rgba(120, 80, 220, 0.55);
 
             &,
             i {
                 color: #BEDBFF;
+                font-size: 20px;
             }
 
         }
@@ -209,6 +229,15 @@ body {
     border-radius: 20px;
     padding: 20px;
     margin: 20px 0;
+}
+
+.gradient-text {
+    display: inline-block;
+    background: linear-gradient(135deg, #0040e3 0%, #7a55ff 50%, #7653ff 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
 }
 
 /* -----Animations--------- */
