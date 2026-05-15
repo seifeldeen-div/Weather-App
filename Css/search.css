@@ -44,7 +44,7 @@ a {
         margin-bottom: 30px;
 
         h2 {
-            margin: 0 70px;
+            margin: 0 20px;
         }
     }
 
@@ -218,12 +218,14 @@ a {
 
 /* ---------------------------------sraechSign----------------- */
 .searchSign {
-    position: absolute;
+    position: fixed;
     top: 20px;
-    right: -100px;
+    right: 20px;
     background: linear-gradient(135deg, #3a72ff 0%, #7a55ff 50%, #6B4FD8 100%);
     box-shadow: 0 0 40px rgba(120, 80, 220, 0.55);
     border: none;
+    transform: translateX(100px);
+    transition: 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
 
     a {
         color: white;
@@ -231,19 +233,19 @@ a {
 }
 
 .activeSearch {
-    right: 20px;
-    transition: 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    transform: translateX(0);
 }
 
 /* ----------------------------------ErrorCity------------------ */
 .errorCity {
+    position: relative;
     width: 200px;
     height: 50px;
     background-color: #2a316c;
     color: white;
-    position: absolute;
-    bottom: 900px;
-    left: calc(60% - 150px);
+    position: fixed;
+    top: 15px;
+    left: calc(60% - 140px);
     border-radius: 10px;
     display: flex;
     justify-content: center;
@@ -252,8 +254,8 @@ a {
     letter-spacing: 1px;
     font-weight: 600;
     transition: 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+    transform: translateY(-150px);
 
-    position: relative;
     overflow: hidden;
 }
 
@@ -274,7 +276,7 @@ a {
     content: "";
     position: absolute;
     inset: 2px;
-    background: #7a55ff;
+    background: #1A1D3A;
     border-radius: 8px;
     z-index: 1;
 }
@@ -285,7 +287,7 @@ a {
 }
 
 .activeErrorCity {
-    bottom: 830px;
+    transform: translateY(0);
 }
 
 /* --------------------WebPhone-------------------------- */

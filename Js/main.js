@@ -180,7 +180,7 @@ if (searchSign) {
                     errorCity.classList.add("activeErrorCity")
                     setTimeout(() => {
                         errorCity.classList.remove("activeErrorCity")
-                    }, 3000)
+                    }, 2500)
                 }
             }))
         }
