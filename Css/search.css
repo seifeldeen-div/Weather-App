@@ -218,6 +218,8 @@ a {
 
 /* ---------------------------------sraechSign----------------- */
 .searchSign {
+    width: 50px;
+    aspect-ratio: 1;
     position: fixed;
     top: 20px;
     right: 20px;
@@ -228,6 +230,8 @@ a {
     transition: 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
 
     a {
+        font-size: 20px;
+        font-weight: 600;
         color: white;
     }
 }

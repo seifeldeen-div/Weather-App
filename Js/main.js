@@ -42,6 +42,7 @@ function getWeather(city, callback = null) {
     req.addEventListener("load", () => {
         if (req.status == 200 && req.readyState == 4) {
             const data = JSON.parse(req.responseText)
+            console.log(req.responseText)
 
             //cityName
             if (cityName)
@@ -194,7 +195,7 @@ if (savedCity) {
     localStorage.removeItem("selectedCity")
 }
 else {
-    city = "cairo"
+    city = "Shebin Al-Kom"
     getWeather(city)
 }
 
