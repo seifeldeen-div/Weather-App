@@ -131,13 +131,14 @@ body {
             flex-wrap: wrap;
             justify-content: space-between;
             align-items: start;
+            gap: 10px;
 
             .part {
                 padding: 10px 15px;
                 flex: 1 1 110px;
                 /* border: solid; */
                 border-radius: 10px;
-                margin: 10px 10px 0 0;
+                /* margin: 10px 10px 0 0; */
                 background: #202552;
                 box-shadow: 0 4px 7px 0px rgba(0, 0, 0, 0.2);
 
@@ -170,10 +171,10 @@ body {
                 }
             }
 
-            .part:nth-child(2),
+            /* .part:nth-child(2),
             .part:nth-child(4) {
                 margin-right: 0;
-            }
+            } */
         }
 
         .date {
@@ -224,6 +225,8 @@ body {
     }
 
     .container .lastCardContainer {
+        /* border: solid; */
+        width: 100%;
         display: flex;
         /* height: 250px; */
         /* border: solid; */
@@ -231,13 +234,21 @@ body {
         align-items: flex-start;
         margin-bottom: 20px;
     }
+    .container .uvCardContainer {
+        /* border: solid; */
+        width: 49%;
+    }
+    .container .windRainContainer {
+        /* border: solid; */
+        width: 49%;
+    }
 
     .container .uvCard {
         /* height: 230px; */
-        width: 180px;
+        /* width: 180px; */
         margin-top: 0;
         margin-bottom: 0;
-        padding: 5px 0 5px 20px;
+        padding: 5px 20px 10px;
         animation: fadeRight 0.8s 0.8s ease forwards;
         opacity: 0;
 
@@ -270,6 +281,7 @@ body {
 
         .range {
             input {
+                width: 100%;
                 margin-bottom: 10px;
                 -webkit-appearance: none;
                 border-radius: 10px;
@@ -348,7 +360,7 @@ body {
 
         .wind,
         .rain {
-            width: 155px;
+            /* width: 155px; */
             margin-top: 0;
             margin-bottom: 10px;
             padding: 5px 20px 20px;
@@ -388,6 +400,23 @@ body {
             .content {
                 color: #ac97ff;
                 letter-spacing: 1.5px;
+            }
+        }
+    }
+}
+/* -------------------------Responsive----------------- */
+@media screen and (max-width:351px) {
+    .container{
+        .lastCardContainer {
+            flex-wrap: wrap;
+            .uvCardContainer {
+                width: 100%;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+            .windRainContainer {
+                width: 100%;
+                text-align: center;
             }
         }
     }
