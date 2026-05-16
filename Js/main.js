@@ -146,38 +146,41 @@ function getWeather(city, callback = null) {
 }
 
 function getUvInfo(degree) {
-    uvRange.value = Math.min((degree / 11) * 100, 100);
+    if (uvRange)
+        uvRange.value = Math.min((degree / 11) * 100, 100);
     function removeAllSta() {
         let status = ["Low", "Moderate", "Extreme", "VeryHigh", "High"]
         status.forEach(sta => {
             labelDegree.classList.remove(sta)
         })
     }
-    if (degree <= 2) {
-        labelDegree.textContent = "Low"
-        removeAllSta()
-        labelDegree.classList.add("Low")
-        uvRange.style.setProperty("--thumb-color","#ccd5d0")
-    } else if (degree <= 5) {
-        labelDegree.textContent = "Moderate"
-        removeAllSta()
-        labelDegree.classList.add("Moderate")
-        uvRange.style.setProperty("--thumb-color","#f7e49cd9")
-    } else if (degree <= 7) {
-        labelDegree.textContent = "High"
-        removeAllSta()
-        labelDegree.classList.add("High")
-        uvRange.style.setProperty("--thumb-color","#f9954e")
-    } else if (degree <= 10) {
-        labelDegree.textContent = "Very High"
-        removeAllSta()
-        labelDegree.classList.add("VeryHigh")
-        uvRange.style.setProperty("--thumb-color","#ec7a7ab5")
-    } else {
-        labelDegree.textContent = "Extreme"
-        removeAllSta()
-        labelDegree.classList.add("Extreme")
-        uvRange.style.setProperty("--thumb-color","#ba81f0c4")
+    if (labelDegree) {
+        if (degree <= 2) {
+            labelDegree.textContent = "Low"
+            removeAllSta()
+            labelDegree.classList.add("Low")
+            uvRange.style.setProperty("--thumb-color", "#ccd5d0")
+        } else if (degree <= 5) {
+            labelDegree.textContent = "Moderate"
+            removeAllSta()
+            labelDegree.classList.add("Moderate")
+            uvRange.style.setProperty("--thumb-color", "#f7e49cd9")
+        } else if (degree <= 7) {
+            labelDegree.textContent = "High"
+            removeAllSta()
+            labelDegree.classList.add("High")
+            uvRange.style.setProperty("--thumb-color", "#f9954e")
+        } else if (degree <= 10) {
+            labelDegree.textContent = "Very High"
+            removeAllSta()
+            labelDegree.classList.add("VeryHigh")
+            uvRange.style.setProperty("--thumb-color", "#ec7a7ab5")
+        } else {
+            labelDegree.textContent = "Extreme"
+            removeAllSta()
+            labelDegree.classList.add("Extreme")
+            uvRange.style.setProperty("--thumb-color", "#ba81f0c4")
+        }
     }
 }
 
