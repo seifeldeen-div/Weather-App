@@ -91,15 +91,47 @@
                 <p id="dateTiem">0000/00/00 00:00</p>
             </div>
         </div>
-        <div class="uvCard cardStyle">
-            <div class="heading">
-                <span>icon</span>
-                <span>UV Index</span>
+        <div class="lastCardContainer">
+            <div class="uvCardContainer">
+                <div class="uvCard cardStyle">
+                    <div class="heading">
+                        <span><i class="fa-solid fa-sun"></i></span>
+                        <span>UV Index</span>
+                    </div>
+                    <div class="content">
+                        <p id="uvDegree">4.8</p>
+                        <p id="labelDegree">Moderator</p>
+                    </div>
+                    <div class="range">
+                        <input type="range" id="uvRange" min="0" max="100" value="0" placeholder="UV Range" disabled>
+                    </div>
+                    <!-- <div class="footer">
+                    <p>Wear sunscreen SPF 30+</p>
+                </div> -->
+                </div>
+                <div class="footerCard cardStyle">
+                    <span class="gradient-text">WeatherPro</span>
+                </div>
             </div>
-            <div class="content">
-                <p>4.8</p>
-                <p>Moderator</p>
-                
+            <div class="windRainContainer">
+                <div class="wind cardStyle">
+                    <div class="heading">
+                        <span><i class="fa-solid fa-wind"></i></span>
+                        <span>Wind Gust</span>
+                    </div>
+                    <div class="content">
+                        <p id="windGust">35.2 <span>Kph</span></p>
+                    </div>
+                </div>
+                <div class="rain cardStyle">
+                    <div class="heading">
+                        <span><i class="fa-solid fa-wind"></i></span>
+                        <span>Wind Direction</span>
+                    </div>
+                    <div class="content">
+                        <p id="rainChance">10<span>%</span></p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

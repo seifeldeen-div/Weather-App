@@ -33,6 +33,11 @@ let weatherIcon = document.querySelector("#weatherIcon")
 let weatherCountry = document.querySelector("#weatherCountry")
 let dateTiem = document.querySelector("#dateTiem")
 let errorCity = document.querySelector(".errorCity")
+let windGust = document.querySelector("#windGust")
+let rainChance = document.querySelector("#rainChance")
+let labelDegree = document.querySelector("#labelDegree")
+let uvDegree = document.querySelector("#uvDegree")
+let uvRange = document.querySelector("#uvRange")
 let city
 
 function getWeather(city, callback = null) {
@@ -43,6 +48,7 @@ function getWeather(city, callback = null) {
         if (req.status == 200 && req.readyState == 4) {
             const data = JSON.parse(req.responseText)
             console.log(req.responseText)
+            console.log(data)
 
             //cityName
             if (cityName)
@@ -112,6 +118,23 @@ function getWeather(city, callback = null) {
             //dateTiem
             if (dateTiem)
                 dateTiem.textContent = data.location.localtime
+
+            //windGust
+            if (windGust)
+                windGust.textContent = `${data.current.gust_kph} Kph`
+
+            //rainChance
+            if (rainChance)
+                rainChance.textContent = `${data.current.wind_dir}`
+
+            //uvDegree
+            if (uvDegree)
+                uvDegree.textContent = `${data.current.uv}`
+            //uvInfo
+            let degree = 11
+            getUvInfo(degree)
+
+            //callback
             if (callback)
                 callback(true)
         } else {
@@ -120,6 +143,42 @@ function getWeather(city, callback = null) {
                 callback(false)
         }
     })
+}
+
+function getUvInfo(degree) {
+    uvRange.value = Math.min((degree / 11) * 100, 100);
+    function removeAllSta() {
+        let status = ["Low", "Moderate", "Extreme", "VeryHigh", "High"]
+        status.forEach(sta => {
+            labelDegree.classList.remove(sta)
+        })
+    }
+    if (degree <= 2) {
+        labelDegree.textContent = "Low"
+        removeAllSta()
+        labelDegree.classList.add("Low")
+        uvRange.style.setProperty("--thumb-color","#ccd5d0")
+    } else if (degree <= 5) {
+        labelDegree.textContent = "Moderate"
+        removeAllSta()
+        labelDegree.classList.add("Moderate")
+        uvRange.style.setProperty("--thumb-color","#f7e49cd9")
+    } else if (degree <= 7) {
+        labelDegree.textContent = "High"
+        removeAllSta()
+        labelDegree.classList.add("High")
+        uvRange.style.setProperty("--thumb-color","#f9954e")
+    } else if (degree <= 10) {
+        labelDegree.textContent = "Very High"
+        removeAllSta()
+        labelDegree.classList.add("VeryHigh")
+        uvRange.style.setProperty("--thumb-color","#ec7a7ab5")
+    } else {
+        labelDegree.textContent = "Extreme"
+        removeAllSta()
+        labelDegree.classList.add("Extreme")
+        uvRange.style.setProperty("--thumb-color","#ba81f0c4")
+    }
 }
 
 // --------------------------tempCardsSearch---------------------
