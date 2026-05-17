@@ -273,7 +273,7 @@ else {
 }
 // ---------------------switch.js------------------
 if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/Weather-App/sw-v1.js');
+    navigator.serviceWorker.register('/Weather-App/sw.js');
 }
 
 // -----------------------Installing App-------------------------------
