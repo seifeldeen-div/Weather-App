@@ -282,7 +282,7 @@ a {
 @keyframes fadebtn {
     0% {
         opacity: 0;
-        transform: translateY(40px);
+        transform: translateY(30px);
     }
 
     100% {
