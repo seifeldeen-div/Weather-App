@@ -289,8 +289,9 @@ window.addEventListener('beforeinstallprompt', e => {
 
 document.querySelector('#installBtn').addEventListener('click', () => {
     deferredPrompt.prompt();
-    deferredPrompt.userChoice.then(() => {
+    deferredPrompt.userChoice.then((choice) => {
+        if(choice.outcome === 'accepted')
+            document.querySelector('#installBtn').style.display = 'none';
         deferredPrompt = null;
-        document.querySelector('#installBtn').style.display = 'none';
     });
 });
