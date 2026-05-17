@@ -14,7 +14,7 @@ a {
 }
 
 #installBtn {
-    display: none;
+    display: block;
 }
 
 :root {
@@ -159,6 +159,7 @@ a {
             margin-top: 10px;
             letter-spacing: 1.1px;
             font-size: 14px;
+            animation: fadebtn 0.9s 0.5s ease-out forwards;
         }
     }
 

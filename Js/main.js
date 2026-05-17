@@ -282,9 +282,9 @@ let deferredPrompt;
 window.addEventListener('beforeinstallprompt', e => {
     e.preventDefault();
     deferredPrompt = e;
-    let btn = document.querySelector('#installBtn');
-    btn.style.display = 'block';
-    btn.style.animation = 'fadebtn 0.8s 0.5s ease-out forwards';
+    // let btn = document.querySelector('#installBtn');
+    // btn.style.display = 'block';
+    // btn.style.animation = 'fadebtn 0.8s 0.5s ease-out forwards';
 });
 
 document.querySelector('#installBtn').addEventListener('click', () => {
