@@ -141,10 +141,10 @@ a {
             box-shadow: 0px 15px 40px rgba(120, 80, 220, 0.55);
             opacity: 0;
         }
-        a {
+        a {  
             animation: fadebtn 0.8s 1.2s ease-out forwards;
         }
-        button {
+        button { 
             text-align: center;
             display: block;
             outline: none;
@@ -152,7 +152,7 @@ a {
             margin-top: 10px;
             letter-spacing: 1.1px;
             font-size: 14px;
-            animation: fadebtn 0.8s 1.3s ease-out forwards;
+            animation: fadebtn 0.8s 1.4s ease-out forwards;
         }
     }
 
@@ -279,10 +279,10 @@ a {
     }
 }
 
-@keyframes fadebtn {
+@keyframes fadebtn { 
     0% {
         opacity: 0;
-        transform: translateY(90px);
+        transform: translateY(50px);
     }
 
     100% {
