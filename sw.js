@@ -1,5 +1,3 @@
-const CACHE_VERSION = 'weatherpro-__BUILD_DATE__';
-
 self.addEventListener('install', e => {
     self.skipWaiting();
 });
@@ -7,34 +5,18 @@ self.addEventListener('install', e => {
 self.addEventListener('activate', e => {
     e.waitUntil(
         caches.keys().then(keys =>
-            Promise.all(
-                keys.filter(key => key !== CACHE_VERSION)
-                    .map(key => caches.delete(key))
-            )
+            Promise.all(keys.map(key => caches.delete(key)))
         ).then(() => clients.claim())
     );
 });
 
 self.addEventListener('fetch', e => {
-    const req = e.request;
-    if (req.destination === 'image') {
-        e.respondWith(
-            caches.match(req).then(r => r || fetch(req).then(res => {
-                return caches.open(CACHE_VERSION).then(cache => {
-                    cache.put(req, res.clone());
-                    return res;
-                });
-            }))
-        );
-        return;
-    }
-
     e.respondWith(
-        fetch(req).then(res => {
-            return caches.open(CACHE_VERSION).then(cache => {
-                cache.put(req, res.clone());
+        caches.match(e.request).then(r => r || fetch(e.request).then(res => {
+            return caches.open('weatherpro-v1').then(cache => {
+                cache.put(e.request, res.clone());
                 return res;
             });
-        }).catch(() => caches.match(req))
+        }))
     );
 });
