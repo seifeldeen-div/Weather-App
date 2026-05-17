@@ -284,7 +284,7 @@ window.addEventListener('beforeinstallprompt', e => {
     deferredPrompt = e;
     let btn = document.querySelector('#installBtn');
     btn.style.display = 'block';
-    btn.style.animation = 'fadebtn2 0.8s 0.5s ease-out forwards';
+    btn.style.animation = 'fadebtn 0.8s 0.5s ease-out forwards';
 });
 
 document.querySelector('#installBtn').addEventListener('click', () => {
