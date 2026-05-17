@@ -124,8 +124,14 @@ a {
 
     .container .btn {
         margin: 70px 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        /* border: solid; */
 
-        a {
+        a,button {
+            width: 100%;
             display: inline-block;
             color: white;
             padding: 15px 25px;
@@ -133,8 +139,20 @@ a {
             /* border: 1px solid; */
             background: linear-gradient(135deg, #3a72ff 0%, #7a55ff 50%, #6B4FD8 100%);
             box-shadow: 0px 15px 40px rgba(120, 80, 220, 0.55);
-            animation: fadebtn 0.8s 1.2s ease-out forwards;
             opacity: 0;
+        }
+        a {
+            animation: fadebtn 0.8s 1.2s ease-out forwards;
+        }
+        button {
+            text-align: center;
+            display: block;
+            outline: none;
+            border: none;
+            margin-top: 10px;
+            letter-spacing: 1.1px;
+            font-size: 14px;
+            animation: fadebtn 0.8s 1.3s ease-out forwards;
         }
     }
 

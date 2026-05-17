@@ -275,3 +275,20 @@ else {
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('/Weather-App/sw.js');
 }
+
+// -----------------------Installing App-------------------------------
+let deferredPrompt;
+
+window.addEventListener('beforeinstallprompt', e => {
+    e.preventDefault();
+    deferredPrompt = e;
+    document.querySelector('#installBtn').style.display = 'block';
+});
+
+document.querySelector('#installBtn').addEventListener('click', () => {
+    deferredPrompt.prompt();
+    deferredPrompt.userChoice.then(() => {
+        deferredPrompt = null;
+        document.querySelector('#installBtn').style.display = 'none';
+    });
+});
