@@ -1,9 +1,9 @@
 {
-    "id": "/index.html",
+    "id": "/Weather-App/index.html",
     "name": "WeatherPro",
     "short_name": "WeatherPro",
     "description": "Your personal weather companion",
-    "start_url": "/index.html",
+    "start_url": "/Weather-App/index.html",
     "display": "standalone",
     "orientation": "portrait",
     "background_color": "#ffffff",
