@@ -13,6 +13,10 @@ a {
     text-decoration: none;
 }
 
+#installBtn {
+    display: none;
+}
+
 :root {
     /*Prime colors*/
     --Background-color: #1a1d3a;
