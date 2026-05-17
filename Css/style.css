@@ -130,7 +130,8 @@ a {
         align-items: center;
         /* border: solid; */
 
-        a,button {
+        a,
+        button {
             width: 100%;
             display: inline-block;
             color: white;
@@ -141,9 +142,11 @@ a {
             box-shadow: 0px 15px 40px rgba(120, 80, 220, 0.55);
             opacity: 0;
         }
+
         a {
             animation: fadebtn 0.8s 1.3s ease-out forwards;
         }
+
         button {
             text-align: center;
             display: block;
@@ -152,9 +155,9 @@ a {
             margin-top: 10px;
             letter-spacing: 1.1px;
             font-size: 14px;
-            animation: fadebtn 0.8s 1.4s ease-out forwards;
+            animation: fadebtn2 0.8s 0.5s ease-out forwards;
         }
-    }
+    }  
 
     footer {
         position: absolute;
@@ -282,7 +285,19 @@ a {
 @keyframes fadebtn {
     0% {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(40px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadebtn2 {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
     }
 
     100% {
