@@ -1,3 +1,8 @@
+console.log("%cDeveloped & Protected by ${Eng Sayoof}",
+    "color: red; font-weight: bold"
+)
+
+
 let loader = document.querySelector("#loader")
 let containerLoder = document.querySelector("#containerLoder")
 let WebPhone = document.querySelector(".WebPhone")
@@ -47,8 +52,8 @@ function getWeather(city, callback = null) {
     req.addEventListener("load", () => {
         if (req.status == 200 && req.readyState == 4) {
             const data = JSON.parse(req.responseText)
-            console.log(req.responseText)
-            console.log(data)
+            // console.log(req.responseText)
+            // console.log(data)
 
             //cityName
             if (cityName)
@@ -131,14 +136,20 @@ function getWeather(city, callback = null) {
             if (uvDegree)
                 uvDegree.textContent = `${data.current.uv}`
             //uvInfo
-            let degree = 11
+            let degree = data.current.uv
+            // console.log(data)
             getUvInfo(degree)
 
             //callback
             if (callback)
                 callback(true)
         } else {
-            console.log("Somthing went Error")
+            console.log(`%cSomthing went Wrong Error at Port:- ${req.status}`,
+                `
+                color: red;
+                font-weight: bold;
+                `
+            )
             if (callback)
                 callback(false)
         }
