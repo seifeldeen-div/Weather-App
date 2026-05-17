@@ -142,7 +142,7 @@ a {
             opacity: 0;
         }
         a {
-            animation: fadebtn 0.8s 1.2s ease-out forwards;
+            animation: fadebtn 0.8s 1.3s ease-out forwards;
         }
         button {
             text-align: center;
